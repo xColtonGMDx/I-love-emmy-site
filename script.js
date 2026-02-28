@@ -38,3 +38,22 @@ document.getElementById("yesBtn").onclick = function() {
 document.getElementById("noBtn").onclick = function() {
     responseText.textContent = "That's okay, thank you for being honest.";
 };
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '💗';
+
+    // Random horizontal position
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.fontSize = (20 + Math.random() * 30) + 'px'; // random size
+
+    document.body.appendChild(heart);
+
+    // Remove the heart after animation finishes
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+// Spawn a heart every 500ms
+setInterval(createHeart, 500);
