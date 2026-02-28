@@ -5,7 +5,6 @@ body {
     text-align: center;
     padding: 40px;
 
-    /* Smooth, soft gradient */
     background: linear-gradient(180deg, #ffbde6 0%, #d3a4ff 100%);
     background-size: cover;
     background-attachment: fixed;
@@ -19,7 +18,7 @@ h1 {
 }
 
 p {
-    font-size: 50px;
+    font-size: 26px; /* lowered from 50px so it looks cleaner */
 }
 
 button {
@@ -48,4 +47,9 @@ button:hover {
     margin-top: 20px;
     font-size: 22px;
     font-weight: 600;
+}
+
+/* Fade effect */
+#compliment {
+    transition: opacity 0.2s ease-in-out;
 }
