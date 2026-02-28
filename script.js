@@ -10,15 +10,23 @@ const compliments = [
 const complimentText = document.getElementById("compliment");
 const responseText = document.getElementById("response");
 
+let lastIndex = -1; // remembers previous compliment
+
 document.getElementById("newBtn").onclick = function() {
-    const random = Math.floor(Math.random() * compliments.length);
+    let random;
+
+    // Keep picking until it's different from the last one
+    do {
+        random = Math.floor(Math.random() * compliments.length);
+    } while (random === lastIndex);
+
+    lastIndex = random;
 
     // Fade out
     complimentText.style.opacity = 0;
 
     setTimeout(() => {
         complimentText.textContent = compliments[random];
-        // Fade back in
         complimentText.style.opacity = 1;
     }, 200);
 };
