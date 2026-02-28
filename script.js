@@ -12,7 +12,15 @@ const responseText = document.getElementById("response");
 
 document.getElementById("newBtn").onclick = function() {
     const random = Math.floor(Math.random() * compliments.length);
-    complimentText.textContent = compliments[random];
+
+    // Fade out
+    complimentText.style.opacity = 0;
+
+    setTimeout(() => {
+        complimentText.textContent = compliments[random];
+        // Fade back in
+        complimentText.style.opacity = 1;
+    }, 200);
 };
 
 document.getElementById("yesBtn").onclick = function() {
