@@ -3,34 +3,39 @@
 body {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 40px;
-
+    min-height: 100vh; /* vertically centers content */
     background: linear-gradient(180deg, #ffbde6 0%, #d3a4ff 100%);
     background-size: cover;
     background-attachment: fixed;
-
     color: #4a2c5b;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 80px; /* bigger heading */
     margin-bottom: 20px;
 }
 
-p {
-    font-size: 26px; /* lowered from 50px so it looks cleaner */
+p, #response {
+    font-size: 32px; /* bigger text */
+    font-weight: 600;
 }
 
+/* Buttons */
 button {
-    padding: 12px 24px;
+    padding: 16px 32px; /* bigger buttons */
     margin: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 12px;
     border: none;
     background: #ffffffaa;
     color: #4a2c5b;
-    border-radius: 12px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
     transition: 0.2s;
 }
 
@@ -43,26 +48,21 @@ button:hover {
     margin-top: 30px;
 }
 
-#response {
-    margin-top: 20px;
-    font-size: 22px;
-    font-weight: 600;
-}
-
-/* Fade effect */
+/* Fade effect for compliments */
 #compliment {
     transition: opacity 0.2s ease-in-out;
 }
+
 /* Heart animation container */
 .heart {
     position: absolute;
     font-size: 30px;
-    pointer-events: none; /* so it doesn't block buttons */
+    pointer-events: none; /* so hearts don't block buttons */
     animation: floatHeart 5s linear infinite;
     opacity: 0.8;
 }
 
-/* Floating + rotating animation */
+/* Floating + rotating + side-to-side sway */
 @keyframes floatHeart {
     0% {
         transform: translate(0, 0) rotate(0deg);
